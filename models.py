@@ -22,10 +22,18 @@ class Suman:
         linear_regression.fit(x, y)
         pickle.dump(linear_regression, open('suman_test_model.pkl', 'wb'))
         return("Pickel Model Generated !")
+    
+    # Method to read a Pickle file
+    def read_pickle_file(self):
+        picked_file = "suman_test_model.pkl"
+        return pickle.load(open(picked_file, 'rb'))
+
 
 
 file = "C:\\Users\\sgang\\OneDrive\\Desktop\\workspace\\ML-With-Flask\\data.csv"
 
 suman = Suman(file)
 
-suman.linear_regression_model()
+# suman.linear_regression_model()
+
+print(suman.read_pickle_file())
